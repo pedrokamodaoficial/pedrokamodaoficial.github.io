@@ -1,2 +1,0 @@
-# pedrokamodaoficial.github.io
-lol
