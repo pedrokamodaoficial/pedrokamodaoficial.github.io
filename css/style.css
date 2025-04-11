@@ -1,460 +1,170 @@
-:root{
-    --background: #1e1c21; 
-    --pink: #fc1e8b; 
-    --purple: #7278c3;
-    --blue: #00a8dc; 
+body, ul {
+  margin: 0px;
+  padding: 0px;
+  background-color: #1F2937;
+  color: #1F2937;
+  font-family: 'Roboto Mono', monospace;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-}
-body{
-    background-color: var(--background);
-    font-family: 'Titillium Web', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.gradient{
-    background: rgba(213,55,155,1);
-    background: -moz-linear-gradient(left, rgba(213,55,155,1) 0%, rgba(119,117,193,1) 69%, rgba(114,119,195,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(213,55,155,1)), color-stop(69%, rgba(119,117,193,1)), color-stop(100%, rgba(114,119,195,1)));
-    background: -webkit-linear-gradient(left, rgba(213,55,155,1) 0%, rgba(119,117,193,1) 69%, rgba(114,119,195,1) 100%);
-    background: -o-linear-gradient(left, rgba(213,55,155,1) 0%, rgba(119,117,193,1) 69%, rgba(114,119,195,1) 100%);
-    background: -ms-linear-gradient(left, rgba(213,55,155,1) 0%, rgba(119,117,193,1) 69%, rgba(114,119,195,1) 100%);
-    background: linear-gradient(to right, rgba(213,55,155,1) 0%, rgba(119,117,193,1) 69%, rgba(114,119,195,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5379b', endColorstr='#7277c3', GradientType=1 );
-}
-.container{
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.container h1{
-    color: #000;
-}
-.container p{
-    color: black;
-}
-nav a{
-    font-size: larger;
-}
-header a{
-    color: #fff;
-    text-decoration: none;
-}
-ul{
-    list-style-type: none;
-}
-.cabecalho{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px 0px;
-    box-shadow: 0px 13px 10px rgba(0, 0, 0, 0.5);
-}
-.cabecalho nav{
-    width: 60%;
-
-}
-.cabecalho ul{
-    display: flex;
-    justify-content: space-around;
-
+header{
+  color: #C7D2FE;
 }
 
-.banner{
-   width: 100%;
-    height: 400px;
-    background-image: url("../img/corrida.jpeg");
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+button{
+  color: #C7D2FE;
 }
-.btn{
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 8px 12px;
+a {
+  color: #C7D2FE;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
 }
-.banner .btn{
-    margin-top:100px; 
+
+a:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
-.sobre{
-    background-image: url("../img/corrida.jpeg");
-    background-position: top;
-    background-size: 1200px;
-    background-attachment: fixed;
-    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-    width: 100%;
-    min-height: 350px;
-    margin: 20px 0;
-    padding: 100px 0;
-    color: white;
+
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
-.sobre .container{
-    display: flex;
+
+#header {
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  height: 70px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1F2937;
+  z-index: 1;
 }
-.sobre .container div{
-    width: 40%;
+
+#menu {
+  color: #C7D2FE;
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
 }
-.campea{
+
+#menu a {
+  display: block;
+  padding: 0.5rem;
+}
+
+#btn-mobile {
+  display: none;
+}
+
+h1{
+  padding: 1em;
+}
+.inicio_img{
+  background-image: url("../img/bg-codebreaker.png");
+  width: 1365px;
+  height: 637px;
+}
+
+/*mobile*/
+@media (max-width: 768px) {
+  #menu {
+    display: block;
     position: absolute;
-    right: 15%;
-    top: 130px;
-}
-#horarios{
     width: 100%;
-    margin: 30px  0;
-    box-shadow: 0px 0px 22px #000;
-    background: rgba(67,43,95,1);
-    background: -moz-linear-gradient(top, rgba(67,43,95,1) 0%, rgba(30,28,33,1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(67,43,95,1)), color-stop(100%, rgba(30,28,33,1)));
-    background: -webkit-linear-gradient(top, rgba(67,43,95,1) 0%, rgba(30,28,33,1) 100%);
-    background: -o-linear-gradient(top, rgba(67,43,95,1) 0%, rgba(30,28,33,1) 100%);
-    background: -ms-linear-gradient(top, rgba(67,43,95,1) 0%, rgba(30,28,33,1) 100%);
-    background: linear-gradient(to bottom, rgba(67,43,95,1) 0%, rgba(30,28,33,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#432b5f', endColorstr='#1e1c21', GradientType=0 );;
-}
-.ao_vivo, .em_breve{
-    border-left: solid 1px var(--purple);
-    color: white;
-    padding: 0 30px;
+    top: 70px;
+    right: 0px;
+    background: #23232e;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+  #menu a {
+    color: #C7D2FE;
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  }
+  #btn-mobile{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.partida img{
-    width: 40px;
-    padding: 0px 15px;
-}
-.partida{
-    padding: 0px 10px;
-    display: flex;
-    align-items: center;
-}
-#horarios .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 0;
-}
-#horarios h2{
-    margin: 0px 15px;
-}
-.em_breve{
-    width: 60%;
-}
-.content{
-    display: flex;
-    color: white;
-}
-.noticias{
-    width: 70%;
-    padding-right: 40px;
-    display: flex;
-    flex-flow: wrap;
-}
-.card{
-    width: 28%;
-    margin: 2%;
-    box-shadow: 0px 2px 6px rgb(117, 117, 117);
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(30,28,33,1) 30%, rgba(30,28,33,1) 100%);
-}
-.card img{
-    width: 100%;
-}
-.card h4{
-    padding: 1em 0 0 1em;
-}
-.card p{
-    padding: 1em;
-    font-size: 0.8em;
-}
-.resultado{
-    text-align: center;
-    margin: 2em 0;
-}
-.recentes{
-    text-align: center;
-    padding: 1.5em;
-    box-shadow: 0px 2px 6px #000;
-    background: rgb(0, 0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(30,28,33,1) 30%, rgba(30,28,33,1) 100%);
-}
-.resultado img{
-    width: 35px;
-}
-.placar{
-    font-size: 1.5em;
-    text-shadow: 3px 3px 6px #000;
-}
-footer{
-    box-shadow: 0px 0px 10px black;
-    color: white;
-    margin-top: 30px ;
-    background: rgb(0, 0,0);
-    box-shadow: 0px 0px 10px black;
-}
-footer .container{
-    display: flex;
-    justify-content: space-between;
-    padding: 2em;
-}
-footer a{
-    color: white;
-    text-decoration: none;
-}
-footer ul{
-    list-style-type: none;
-}
-footer .sociais{
-    display: flex;
-    justify-content: space-evenly;
-    color: var(--purple);
-    font-size: 2em;
-    padding: 1.2em 0px;
-}
-footer h5{
-    padding-bottom: 1.2em;
-    color: #474747;
-    font-size: 1.7em;
-}
-footer h6{
-    text-align: end;
-    font-size: 1.1em;
-}
-footer p{
-    text-align: center;
-    color: #474747;
-}
-
-/* PÁGINA DE CASTRO */
-
-.titulo_pagina{
-    width: 100%;
-    height: 320px;
-    background-image: url("../img/cadastro.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    text-transform: uppercase;
-    padding-top: 3em;
-}
-.form_cadastro{
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5), 0px -4px 10px rgba(114,119,195,0.8);
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: space-between;
-    color: white;
-    margin-top: 3em;
-    margin-bottom: 3em;
-    padding: 1.5em;
-}
-.campo{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5em;
-}
-.campo label{
-    text-transform: uppercase;
-}
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="date"],
-select{
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
     border: none;
-    background-color: #1E1C21;
-    color: #ccc;
-    border-bottom: 1px solid #474747 ;
-    width: 60%;
-    padding: 0.1em;
-}
-input[type="date"]{
-    text-align: center;
-    font-size:1.3em ;
-}
-input:focus, select:focus{
-    border: none;
-    background-color: #474747;
-}
-fieldset{
-    width: 100%;
-    border: none;
-}
-fieldset legend{
-    text-transform: uppercase;
-}
-input[type="radio"]{
-    margin-right: 0.1em;
-}
-fieldset label{
-    margin-right: 0.5em;
-}
-.termos{
-    align-items: center;
-    justify-content: start;
-}
-.termos label{
-    text-transform: lowercase;
-    margin-left: 0.5em;
-}
-.form_cadastro button{
-    border: none;
-    width: 60%;
-    margin-top: 2em;
+    background: none;
     cursor: pointer;
+    gap: 0.5rem;
+  }
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+  }
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+  .inicio_img{
+    background-image: url("../img/bg-codebreaker-mobile.png"); 
+    width: 100%;
+  }
+  .container{
+    width: 80vw;
+    
+  }
 }
-.cabecalho .fa-bars{
-    color: var(--purple);
-    font-size: 2em;
-    margin-left: 2em;
-    display: none;
+
+.container{
+  display: flex;
+	align-items: center;
+	justify-content: center;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 40px;
 }
-@media screen and (max-width :1200px){
-    .campea{
-        right: 0;
-    }
-    .sobre .container div{
-        width: 50%;
-    }
-    .container{
-        width: 95;
-    }
+.container a{
+	text-decoration: none;
+	border: 3px solid #0984e3;
+	padding: 0.6em 1em;
+	font-size: 2rem;
+	color: #C7D2FE;
+	font-weight: bold;
+	position: relative;
 }
-@media screen and (max-width: 768px){
-    header img{
-        max-width: 180px;
-    }
-    .container{
-        width: 98%;
-    }
-    .campea{
-        max-width: 500px;
-        margin-top: 50px;
-        right: -100px;
-    }
-    .sobre .container div{
-        width: 55%;
-        margin-left: 30px;
-    }
-    .ao_vivo{
-        padding: 5.3em 5px;
-        padding: 0px 5px;
-        width: 50%;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .em_breve{
-        width: 50%;
-        flex-wrap: wrap;
-    }
-    .em_breve .partida{
-        margin: 0.5em 0;
-    }
-    /* Seção Notícias */
-    .noticias{
-        flex-direction: column;
-    }
-    .card{
-        display: flex;
-        width: 100%;
-    }
-    .card img{
-        width: 30%;
-    }
-    footer .container{
-        padding-top: 0.3em;
-        width: 94%;
-    }
-    .mob_logo_sociais{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .mob_logo_sociais img{
-        max-width: 180px;
-    }
-}/*max 768px */
-@media screen and (max-width: 460px){
-    .cabecalho .fa-bars{
-        display: block;
-    }
-    .cabecalho div{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 0 2em;
-    }
-    #menu{
-        position: absolute;
-        top: 72px;
-        background-color: #1e1c21;
-        width: 100%;
-        display: none;
-    }
-    .cabecalho ul{
-        /* background-color: red; */
-        flex-direction: column;
-        height: 250px;
-    }
-    .cabecalho ul a{
-        padding: 0.5em 100% 0.5em 0.5em;
-        margin: 0.1em 0;
-        margin-left: 2em;
-    }
-    /* ocultar a campeã no mobile  */
-    .campea{
-        display: none;
-    }
-    .sobre .container div{
-         width: 50%;
-         text-align: justify;
-    }
-    .sobre .container h1{
-        text-align: center;
-        margin-bottom: 1em;
-    }
-    #horarios .container{
-        flex-direction: column;
-    }
-    .ao_vivo, .em_breve{
-        padding:1em;
-        border: none;
-    }
-    .partida{
-        margin: 1em 0;
-    }
-    .card{
-        flex-direction: column;
-    }
-    .card img{
-        width: 100%;
-        object-fit: cover;
-        object-position: top;
-    }
-    .noticias{
-        width: 95%;
-        padding-right: 15px;
-    }
-    .recentes{
-        padding: 0.5em;
-    }
-    .content{
-        flex-direction: column;
-    }
+.container a::before{	
+	content:'';
+	width: 100%;
+	height: 0;
+	background-color: #0984e3;
+	transition: 300ms height ease-out;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.container a:hover::before{
+	height: 100%;
 }

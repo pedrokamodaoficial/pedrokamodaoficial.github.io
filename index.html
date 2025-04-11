@@ -2,100 +2,42 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuRique Fit</title>
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/012bbaf5a1.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <header id="header">
+    <a id="logo" href="">PEDRO KAMODA</a>
+    <nav id="nav">
+      <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+        <span id="hamburger"></span>
+      </button>
+      <ul id="menu" role="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="/">Sobre</a></li>
+        <li><a href="/">Projetos</a></li>
+        <li><a href="/">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <header>
-        <div class="container cabecalho">
-            <div>
-                <a href="#" onclick="botaoMenu()">
-                    <i class="fas fa-bars"></i>
-                </a>
-                <a href="index.html">
-                    <div class="image_logo">
-                        <img src="img/Lurique (2).png" alt="Logo site E-Players">
-                    </div>
-                </a>
-            </div>
-            <nav id="menu">
-                <ul>
-                    <li><a href="index.html" title="Ir até a página inícial">INÍCIO</a></li>
-                    <li><a href="#horarios" title="Ir até a sessão de HORARIOS">HORARIOS</a></li>
-                    <li><a href="#resultados" title="Ir até a sessão de Resultados">RESULTADOS</a></li>
-                    <li>
-                        <a href="#" title="Buscar Conteudo"><i class="fas fa-search"></i>
+<main>
+  <div class="inicio_img">
+  </div>
+</main>
 
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <div class="sobre">
-            <div class="container">
-                <div>
-                    <h1>QUEM EU SOU E COMO EU TRABALHO</h1>
-                    <p>Meu nome é Luis Henrique e além de corredor profissional também auxilio pessoas que querem seguir esse mesmo caminho! <br> Ajudo com treinos, alimentação e acompanhamento nas práticas esportivas. <br> Clique em "Saiba Mais" e venha me conhecer!! </p>
-                </div>
-            </div>
-        </div>
-
-    <footer>
-        <div class="container">
-            <div>
-                <h5>INSTITUCIONAL</h5>
-                <nav>
-                    <ul>
-                        <li><a href="#">Fale Conocsco</a></li>
-                        <li><a href="#">Contato</a></li>
-                        <li><a href="#">Suporte</a></li>
-                        <li><a href="#">Política de Privacidade</a></li>
-                        <li><a href="#">Termos de Uso</a></li>
-                        <li><a href="#">Seja Team LuRique</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div>
-                <img src="img/Lurique (2).png" alt="Logo E-Players">
-
-                <div class="sociais">
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-instagram-square"></i>
-                    <i class="fab fa-twitter-square"></i>
-                    <i class="fab fa-youtube-square"></i>
-                </div>
-
-            </div>
-            <div>
-                <h5>GRANDEZA EM PEQUENOS COMEÇOS</h5>
-                <h6>COMPETIÇÕES</h6>
-                <h6>MARCAS</h6>
-                <h6>COMPANHEIROS</h6>
-                <h6>PATROCINADORES</h6>
-            </div>
-        </div>
-        <p>© 2025 PEDRO KAMODA / LUIS HENRIQUE - Todos os direitos reservados</p>
-    </footer>
-      <script>
-
-          function botaoMenu(){
-              var m = document.getElementById("menu");
-              if(m.style.display == "block"){
-                  m.style.display = "none";
-              }else{
-                  m.style.display = "block"
-              }
-          }
-      </script>
+<div class="container">
+  <a href="#">Conheça meus trabalhos</a>
+  </div>
+    
+  <script src="mobile-navbar.js"></script>
 </body>
 
 </html>
