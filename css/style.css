@@ -63,7 +63,7 @@ h1{
   padding: 1em;
 }
 .banner{
-  width: 100%;
+  width: 100vw;
   height: 640px;
   background-image: url("../img/bg-codebreaker.png");
   background-position: center;
@@ -121,9 +121,8 @@ h1{
     display: block;
     position: absolute;
     width: 100%;
-    top: 70px;
     right: 0px;
-    background: #23232e;
+    background: #1F2937;
     transition: 0.6s;
     z-index: 1000;
     height: 0px;
@@ -131,7 +130,7 @@ h1{
     overflow-y: hidden;
   }
   #nav.active #menu {
-    height: calc(100vh - 70px);
+    height: calc(100vh - 350px);
     visibility: visible;
     overflow-y: auto;
   }
