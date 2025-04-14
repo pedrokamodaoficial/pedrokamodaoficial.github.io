@@ -5,7 +5,9 @@ body, ul {
   color: #1F2937;
   font-family: 'Roboto Mono', monospace;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 header{
   color: #C7D2FE;
 }
@@ -172,6 +174,9 @@ h1{
   #nav.active #hamburger::after {
     transform: rotate(-135deg);
     top: -7px;
+  }
+  .banner{
+    width: 100%;
   }
 }
 
