@@ -65,7 +65,38 @@ h1{
   width: 1365px;
   height: 637px;
 }
-
+.container{
+  display: flex;
+	align-items: center;
+	justify-content: center;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 40px;
+}
+.container a{
+	text-decoration: none;
+	border: 3px solid #0984e3;
+	padding: 0.6em 1em;
+	font-size: 2rem;
+	color: #C7D2FE;
+	font-weight: bold;
+	position: relative;
+}
+.container a::before{	
+	content:'';
+	width: 100%;
+	height: 0;
+	background-color: #0984e3;
+	transition: 300ms height ease-out;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.container a:hover::before{
+	height: 100%;
+}
 /*mobile*/
 @media (max-width: 768px) {
   #menu {
@@ -126,45 +157,17 @@ h1{
     transform: rotate(-135deg);
     top: -7px;
   }
+}
+
+@media (max-width: 360px){
   .inicio_img{
-    background-image: url("../img/bg-codebreaker-mobile.png"); 
+    background-image: url("../img/bg-cyberstorm-mobile.png"); 
     width: 100%;
+    background-repeat: no-repeat;
+    background-position: cover;
   }
   .container{
     width: 80vw;
-    
   }
 }
 
-.container{
-  display: flex;
-	align-items: center;
-	justify-content: center;
-  height: 100vh;
-  position: absolute;
-  top: 0px;
-  left: 40px;
-}
-.container a{
-	text-decoration: none;
-	border: 3px solid #0984e3;
-	padding: 0.6em 1em;
-	font-size: 2rem;
-	color: #C7D2FE;
-	font-weight: bold;
-	position: relative;
-}
-.container a::before{	
-	content:'';
-	width: 100%;
-	height: 0;
-	background-color: #0984e3;
-	transition: 300ms height ease-out;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-}
-.container a:hover::before{
-	height: 100%;
-}
