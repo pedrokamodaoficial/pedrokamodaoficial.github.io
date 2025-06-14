@@ -31,7 +31,6 @@ function animarTexto() {
 function resetarTexto() {
   gsap.set(".titulo", { y: 100, opacity: 0 });
   gsap.set(".subtitulo", { y: 100, opacity: 0 });
-<<<<<<< HEAD
 }
 
 function animarIntroTextos() {
@@ -49,6 +48,4 @@ function animarIntroTextos() {
 
 function resetarIntroTextos() {
   gsap.set(".intro-txt", { opacity: 0, y: -50 });
-=======
->>>>>>> 80a960e1efb626a7dec9beef5c7906ed06b49216
 }
