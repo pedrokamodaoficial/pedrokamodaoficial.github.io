@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: white;
+    font: normal 18pt Arial;
+}
+.header{
+    z-index: 1000;
+}
+
+/* Inicio Navbar*/
+.navbar {
+     transition: background-color 0.4s ease, color 0.4s ease;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+.navbar-inicio {
+    background-color: transparent;
+    color: black;
+}
+
+.navbar-inicio .nav-link,
+.navbar-inicio .navbar-brand {
+    color: black;
+}
+.navbar-hero {
+    background-color: black;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.navbar-hero .nav-link,
+.navbar-hero .navbar-brand,
+.navbar-hero .btn{
+    color: white;
+}
+.nav-link:hover {
+    text-decoration: underline;
+}
+.navbar .btn {
+    color: white;
+    border-radius: 20px;
+    padding: 0.4rem 1.2rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+.navbar-inicio .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.navbar-hero .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.navbar a:hover{
+    text-decoration: none;
+    color: darkgray;
+    font-style: none;
+}
+/*Fim Navbar*/
+
+/*Animação Hello World com Gsap*/
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.caixa{
+    color: black;
+}
+.caixa h1{
+    font-size: 100px;
+}
+
+/*Seção hero*/
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#starfield {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Estrelas */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+.titulo, .subtitulo {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+/*Seção de introdução ao meu perfil*/
+#introduction {
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+}
+
+#stars-intro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#introduction .container {
+  position: relative;
+  z-index: 1;
+}
+
+.intro-txt {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+/*Rodapé bunitinho (testes né)*/
+footer{
+    width: 100%;
+    background-color: black;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
