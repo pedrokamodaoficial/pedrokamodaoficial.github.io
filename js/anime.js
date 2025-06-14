@@ -26,6 +26,7 @@ if (document.getElementById('starfield')) {
   }, 200);
 }
 
+<<<<<<< HEAD
 //Criando estrelas para a seção introduction (Que será branca com estrelas pretas, oposto da seção hero)
 function criarEstrelasIntro() {
   const canvas = document.getElementById("stars-intro");
@@ -72,3 +73,5 @@ function criarEstrelasIntro() {
 }
 
 criarEstrelasIntro();
+=======
+>>>>>>> 80a960e1efb626a7dec9beef5c7906ed06b49216

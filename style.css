@@ -12,7 +12,11 @@ body{
 
 /* Inicio Navbar*/
 .navbar {
+<<<<<<< HEAD
      transition: background-color 0.4s ease, color 0.4s ease;
+=======
+    transition: background-color 0.4s ease, color 0.4s ease;
+>>>>>>> 80a960e1efb626a7dec9beef5c7906ed06b49216
     padding: 1rem 2rem;
     z-index: 1000;
 }
@@ -28,7 +32,10 @@ body{
 .navbar-hero {
     background-color: black;
     color: white;
+<<<<<<< HEAD
     box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+=======
+>>>>>>> 80a960e1efb626a7dec9beef5c7906ed06b49216
 }
 
 .navbar-hero .nav-link,
@@ -107,6 +114,7 @@ body{
 .titulo, .subtitulo {
   opacity: 0;
   transform: translateY(100px);
+<<<<<<< HEAD
 }
 
 /*Seção de introdução ao meu perfil*/
@@ -144,3 +152,6 @@ footer{
     text-align: center;
     color: white;
 }
+=======
+}
+>>>>>>> 80a960e1efb626a7dec9beef5c7906ed06b49216
