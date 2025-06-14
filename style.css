@@ -18,7 +18,8 @@ body{
     z-index: 1000;
 }
 .navbar-inicio {
-    background-color: transparent;
+  border: solid 0.2px black;
+    background-color: white;
     color: black;
 }
 
