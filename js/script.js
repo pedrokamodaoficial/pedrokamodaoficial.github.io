@@ -51,8 +51,8 @@ const observerIntro = new IntersectionObserver((entries) => {
 
 if (sectionIntro) observerIntro.observe(sectionIntro);
 
-//Parte para tradução do site
 
+//Data-i18n para tradução do site
 const translations = {
   en: {
     "nav.home": "Home",
@@ -64,7 +64,6 @@ const translations = {
     "intro.description": "Graduated in Journalism, technician in systems analysis and development and a software engineer in production. I have a lot of knowledge and experience with writing, communication, Java, C#, JavaScript (including libraries such as anime.js, gsap.js), Bootstrap, Tailwind, React & ReactNative",
     "projects.title": "My Projects",
     "project.description1": "Team production at Senai IT with the aim of solving the problem of overcrowding in a medical laboratory during the pandemic.",
-    "project.feitocom": "Made with:",
     "project.github": "See GitHub",
     "project.figma": "See Figma",
     "project.title": "LuRique Fit - WebSite",
@@ -82,7 +81,6 @@ const translations = {
     "intro.description": "Formado em Jornalismo, técnico em análise e desenvolvimento de sistemas e engenheiro de software em produção. Possuo amplo conhecimento e experiência com escrita, comunicação, Java, C#, JavaScript (incluindo bibliotecas como anime.js, gsap.js), Bootstrap, Tailwind, React e ReactNative.",
     "projects.title": "Meus Projetos",
     "project.description1": "Produção em equipe no Senai TI com o objetivo de solucionar o problema de superlotação em um laboratório médico durante a pandemia.",
-    "project.feitocom": "Feito com:",
     "project.github": "Ver GitHub",
     "project.figma": "Ver Figma",
     "project.title": "LuRique Fit - Site",
@@ -92,14 +90,32 @@ const translations = {
   }
 };
 
+//Troca do inglês para o português com base nos nomes das classes e texto trocado
 let currentLang = "en";
 
 function changeLanguage(lang) {
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
+  const elements = document.querySelectorAll("[data-i18n]");
+
+  elements.forEach((el) => {
     const key = el.getAttribute("data-i18n");
-    if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
-    }
+    const newText = translations[lang][key];
+
+    if (!newText) return;
+
+    // Adiciona fade-out
+    el.classList.add("fade-out");
+
+    // Espera a animação de fade-out, troca o texto e aplica fade-in
+    setTimeout(() => {
+      el.textContent = newText;
+      el.classList.remove("fade-out");
+      el.classList.add("fade-in");
+
+      // Remove fade-in depois de um tempo
+      setTimeout(() => {
+        el.classList.remove("fade-in");
+      }, 300);
+    }, 300);
   });
 }
 
