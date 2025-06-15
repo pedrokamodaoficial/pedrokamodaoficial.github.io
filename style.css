@@ -42,7 +42,7 @@ body{
     text-decoration: underline;
 }
 .navbar .btn {
-    color: white;
+    color: grey;
     border-radius: 20px;
     padding: 0.4rem 1.2rem;
     font-weight: 500;
@@ -135,6 +135,29 @@ body{
 .intro-txt {
   opacity: 0;
   transform: translateY(-50px);
+}
+
+#stars-white-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.inicio,
+.introduction,
+.projects {
+  position: relative;
+  z-index: 1;
+}
+
+.frase {
+  position: relative;
+  z-index: 2; /* acima das estrelas */
+  background-color: white; /* ou outra cor de fundo */
 }
 
 /*Seção dos projetos*/

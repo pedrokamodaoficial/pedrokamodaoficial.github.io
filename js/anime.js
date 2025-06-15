@@ -26,27 +26,35 @@ if (document.getElementById('starfield')) {
   }, 200);
 }
 //Criando estrelas para a seção introduction (Que será branca com estrelas pretas, oposto da seção hero)
-function criarEstrelasIntro() {
-  const canvas = document.getElementById("stars-intro");
+function criarEstrelasBrancas() {
+  const canvas = document.getElementById("stars-white-bg");
   const ctx = canvas.getContext("2d");
 
-  let width = canvas.width = window.innerWidth;
-  let height = canvas.height = document.querySelector("#introduction").offsetHeight;
+  function ajustarCanvas() {
+    const intro = document.getElementById("introduction");
+    const projects = document.getElementById("projects");
+    const alturaTotal = intro.offsetHeight + projects.offsetHeight;
+
+    canvas.width = window.innerWidth;
+    canvas.height = alturaTotal;
+  }
+
+  ajustarCanvas();
 
   const numStars = 100;
   const stars = [];
 
   for (let i = 0; i < numStars; i++) {
     stars.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
       radius: Math.random() * 1.5,
       speed: Math.random() * 0.3 + 0.1
     });
   }
 
   function draw() {
-    ctx.clearRect(0, 0, width, height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "black";
     for (let star of stars) {
       ctx.beginPath();
@@ -54,9 +62,9 @@ function criarEstrelasIntro() {
       ctx.fill();
 
       star.y += star.speed;
-      if (star.y > height) {
+      if (star.y > canvas.height) {
         star.y = 0;
-        star.x = Math.random() * width;
+        star.x = Math.random() * canvas.width;
       }
     }
     requestAnimationFrame(draw);
@@ -64,10 +72,7 @@ function criarEstrelasIntro() {
 
   draw();
 
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = document.querySelector("#introduction").offsetHeight;
-  });
+  window.addEventListener('resize', ajustarCanvas);
 }
 
-criarEstrelasIntro();
+criarEstrelasBrancas();
