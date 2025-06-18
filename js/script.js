@@ -68,6 +68,8 @@ const translations = {
     "project.figma": "See Figma",
     "project.title": "LuRique Fit - WebSite",
     "project.description2": "This project is for a Running Personal Trainer. He wanted greater proximity to his students and a way to share his work with more people.",
+    "project.description3": "API project during the technical course at Senai. With ASP.NET core in Visual Studio IDE.",
+    "project.description4": "Conclusion of the Code-tur project after making API and database (with MySQL).",
     "project.Test": "Test Project",
     "project.Running": "Project Running",
   },
@@ -85,10 +87,13 @@ const translations = {
     "project.figma": "Ver Figma",
     "project.title": "LuRique Fit - Site",
     "project.description2": "Este projeto é para um Personal Trainer de Corrida. Ele buscava maior proximidade com seus alunos e uma forma de compartilhar seu trabalho com mais pessoas.",
+    "project.description3": "Projeto de API durante o curso técnico do Senai. Com ASP.NET Core com Visual Studio.",
+    "project.description4": "Conclusão do projeto Code-tur após criação de API e banco de dados (com MySQL).",
     "project.Test": "Testar projeto",
     "project.Running": "Projeto Executando",
   }
 };
+
 
 //Troca do inglês para o português com base nos nomes das classes e texto trocado
 let currentLang = "en";
