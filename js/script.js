@@ -69,9 +69,15 @@ const translations = {
     "project.title": "LuRique Fit - WebSite",
     "project.description2": "This project is for a Running Personal Trainer. He wanted greater proximity to his students and a way to share his work with more people.",
     "project.description3": "API project during the technical course at Senai. With ASP.NET core in Visual Studio IDE.",
-    "project.description4": "Conclusion of the Code-tur project after making API and database (with MySQL).",
+    "project.description4": "The conclusion of the Code-tur project after making API and database (with MySQL) and learning how to use React and Bootstrap.",
     "project.Test": "Test Project",
     "project.Running": "Project Running",
+    "contact.talk2me": "Talk to me!",
+    "contact.name": "Full Name",
+    "contact.message": "Text here...",
+    "contact.sendMail": "Send e-mail",
+    "contact.number": "Your Number (DDD)",
+    "contact.sendZap": "Send message!",
   },
   pt: {
     "nav.home": "Inicio",
@@ -88,9 +94,15 @@ const translations = {
     "project.title": "LuRique Fit - Site",
     "project.description2": "Este projeto é para um Personal Trainer de Corrida. Ele buscava maior proximidade com seus alunos e uma forma de compartilhar seu trabalho com mais pessoas.",
     "project.description3": "Projeto de API durante o curso técnico do Senai. Com ASP.NET Core com Visual Studio.",
-    "project.description4": "Conclusão do projeto Code-tur após criação de API e banco de dados (com MySQL).",
+    "project.description4": "A conclusão do projeto Code-tur após criação de API e banco de dados (com MySQL), aprendendo a utilizar React e implementando Bootstrap.",
     "project.Test": "Testar projeto",
     "project.Running": "Projeto Executando",
+    "contact.talk2me":"Fale comigo!",
+    "contact.name": "Nome Completo",
+    "contact.message": "Escreva aqui...",
+    "contact.sendMail": "Enviar e-mail",
+    "contact.number": "Seu Número (Com DDD)",
+    "contact.sendZap": "Enviar Mensagem!",
   }
 };
 
@@ -107,16 +119,13 @@ function changeLanguage(lang) {
 
     if (!newText) return;
 
-    // Adiciona fade-out
     el.classList.add("fade-out");
 
-    // Espera a animação de fade-out, troca o texto e aplica fade-in
     setTimeout(() => {
       el.textContent = newText;
       el.classList.remove("fade-out");
       el.classList.add("fade-in");
 
-      // Remove fade-in depois de um tempo
       setTimeout(() => {
         el.classList.remove("fade-in");
       }, 300);
@@ -132,3 +141,40 @@ document.getElementById("langToggle").addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   changeLanguage(currentLang);
 });
+
+
+//Script da seção de contato com botão alternando
+const btnEmail = document.getElementById('btn-email');
+const btnWhatsApp = document.getElementById('btn-whatsapp');
+const formEmail = document.getElementById('form-email');
+const formWhatsApp = document.getElementById('form-whatsapp');
+
+  btnEmail.addEventListener('click', () => {
+    formEmail.classList.remove('hidden');
+    formWhatsApp.classList.add('hidden');
+    btnEmail.classList.add('active');
+    btnWhatsApp.classList.remove('active');
+  });
+
+  btnWhatsApp.addEventListener('click', () => {
+    formWhatsApp.classList.remove('hidden');
+    formEmail.classList.add('hidden');
+    btnWhatsApp.classList.add('active');
+    btnEmail.classList.remove('active');
+  });
+
+  formEmail.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const mensagem = document.getElementById('mensagem-email').value;
+    window.location.href = `mailto:pedrokamoda@gmail.com?subject=Contato de ${nome}&body=${encodeURIComponent(mensagem)}%0AEmail: ${email}`;
+  });
+
+  formWhatsApp.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const telefone = document.getElementById('telefone').value.replace(/\D/g, '');
+    const mensagem = document.getElementById('mensagem-whatsapp').value;
+    const link = `https://wa.me/5511972191767?text=${encodeURIComponent(mensagem)}`;
+    window.open(link, '_blank');
+  });

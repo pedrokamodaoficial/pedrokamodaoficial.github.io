@@ -175,6 +175,17 @@ body{
   margin: 8px;
 }
 
+/*Seção de contato*/
+.form-toggle button {
+  width: 100px;
+}
+.hidden {
+  display: none;
+}
+.btns{
+  padding-bottom: 20px;
+}
+
 /*Rodapé bunitinho (testes né)*/
 footer{
     width: 100%;

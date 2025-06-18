@@ -125,7 +125,7 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Code-tur React</h5>
-            <p class="card-text" data-i18n="project.description4">The conclusion of the Code-tur project after making API and database (with MySQL).</p>
+            <p class="card-text" data-i18n="project.description4">The conclusion of the Code-tur project after making API and database (with MySQL) and learning how to use React and bootstrap.</p>
               <img width="24" height="24" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png" alt="external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo"/>
               <img width="24" src="https://img.icons8.com/color-glass/48/bootstrap.png" alt="Bootstrap">
               <img width="24" height="24" src="https://img.icons8.com/color/48/git.png" alt="git"/>
@@ -171,6 +171,51 @@
     </div>
   </div>
 </div>
+
+<!--Seção de contato com newsletter de e-mail e Whatsapp-->
+<section class="contato" id="contato">
+  <h2 class="text-center mb-4" data-i18n="contact.talk2me">Talk to me!</h2>
+<div class="container p-5">
+<div class="row">
+  <div class="form-toggle text-center col-9 btns">
+    <button id="btn-email" class="btn btn-outline-dark me-2 active">Email</button>
+    <button id="btn-whatsapp" class="btn btn-outline-dark">WhatsApp</button>
+  </div>
+
+  <!-- Formulário de Email -->
+   <div class="col-12">
+  <form id="form-email" class="border p-4 bg-white shadow-sm rounded">
+    <div class="mb-3">
+      <label for="nome" class="form-label" data-i18n="contact.name">Full Name</label>
+      <input type="text" class="form-control" id="nome" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="email" class="form-control" id="email" required>
+    </div>
+    <div class="mb-3">
+      <label for="mensagem-email" class="form-label" data-i18n="contact.message">Text here...</label>
+      <textarea class="form-control" id="mensagem-email" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-dark" data-i18n="contact.sendMail">Send e-mail</button>
+  </form>
+
+  <!-- Formulário de WhatsApp -->
+  <form id="form-whatsapp" class="border p-4 bg-white shadow-sm rounded hidden">
+    <div class="mb-3">
+      <label for="telefone" class="form-label" data-i18n="contact.number">Your Number (DDD)</label>
+      <input type="tel" class="form-control" id="telefone" required>
+    </div>
+    <div class="mb-3">
+      <label for="mensagem-whatsapp" class="form-label" data-i18n="contact.message">Text here...</label>
+      <textarea class="form-control" id="mensagem-whatsapp" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-dark" data-i18n="contact.sendZap">Send message!</button>
+  </form>
+   </div>
+</div>
+</div>
+</section>
 
 
 <footer>
