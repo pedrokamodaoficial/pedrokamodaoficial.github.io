@@ -1,56 +1,61 @@
-//Criando animações e troca de cores do menu de navegação com IntersectionObserver 
-const navbar = document.querySelector('.navbar');
-const sectionHero = document.querySelector('#hero');
-const sectionIntro = document.querySelector('#introduction');
+//Criando animações e troca de cores do menu de navegação com IntersectionObserver
+const navbar = document.querySelector(".navbar");
+const sectionHero = document.querySelector("#hero");
+const sectionIntro = document.querySelector("#introduction");
 
 let heroVisivel = false;
 let introVisivel = false;
 
 function atualizarNavbar() {
   if (heroVisivel) {
-    navbar.classList.add('navbar-hero');
-    navbar.classList.remove('navbar-inicio');
+    navbar.classList.add("navbar-hero");
+    navbar.classList.remove("navbar-inicio");
   } else if (introVisivel) {
-    navbar.classList.remove('navbar-hero');
-    navbar.classList.add('navbar-inicio');
+    navbar.classList.remove("navbar-hero");
+    navbar.classList.add("navbar-inicio");
   } else {
-    navbar.classList.add('navbar-inicio');
-    navbar.classList.remove('navbar-hero');
+    navbar.classList.add("navbar-inicio");
+    navbar.classList.remove("navbar-hero");
   }
 }
 
-const observerHero = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    heroVisivel = entry.isIntersecting;
+const observerHero = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      heroVisivel = entry.isIntersecting;
 
-    if (heroVisivel) {
-      animarTexto();
-    } else {
-      resetarTexto();
-    }
+      if (heroVisivel) {
+        animarTexto();
+      } else {
+        resetarTexto();
+      }
 
-    atualizarNavbar();
-  });
-}, { threshold: 0.1 });
+      atualizarNavbar();
+    });
+  },
+  { threshold: 0.1 }
+);
 
 if (sectionHero) observerHero.observe(sectionHero);
 
-const observerIntro = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    introVisivel = entry.intersectionRatio >= 1.0;
+const observerIntro = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      introVisivel = entry.intersectionRatio >= 1.0;
 
-    if (entry.intersectionRatio > 0.6) {
-      animarIntroTextos();
-    } else {
-      resetarIntroTextos();
-    }
+      if (entry.intersectionRatio > 0.6) {
+        animarIntroTextos();
+      } else {
+        resetarIntroTextos();
+      }
 
-    atualizarNavbar();
-  });
-}, { threshold: [0.6, 1.0] });
+      atualizarNavbar();
+    });
+  },
+  { threshold: [0.6, 1.0] }
+);
 
 if (sectionIntro) observerIntro.observe(sectionIntro);
-
 
 //Data-i18n para tradução do site
 const translations = {
@@ -61,15 +66,20 @@ const translations = {
     "hero.title": "Welcome to my universe",
     "hero.subtitle": "Explore my projects as a Full-Stack Developer",
     "intro.subtitle": "Developer & Journalist",
-    "intro.description": "Graduated in Journalism, technician in systems analysis and development and a software engineer in production. I have a lot of knowledge and experience with writing, communication, Java, C#, JavaScript (including libraries such as anime.js, gsap.js), Bootstrap, Tailwind, React & ReactNative",
+    "intro.description":
+      "Graduated in Journalism, technician in systems analysis and development and a software engineer in production. I have a lot of knowledge and experience with writing, communication, Java, C#, JavaScript (including libraries such as anime.js, gsap.js), Bootstrap, Tailwind, React & ReactNative",
     "projects.title": "My Projects",
-    "project.description1": "Team production at Senai IT with the aim of solving the problem of overcrowding in a medical laboratory during the pandemic.",
+    "project.description1":
+      "Team production at Senai IT with the aim of solving the problem of overcrowding in a medical laboratory during the pandemic.",
     "project.github": "See GitHub",
     "project.figma": "See Figma",
     "project.title": "LuRique Fit - WebSite",
-    "project.description2": "This project is for a Running Personal Trainer. He wanted greater proximity to his students and a way to share his work with more people.",
-    "project.description3": "API project during the technical course at Senai. With ASP.NET core in Visual Studio IDE.",
-    "project.description4": "The conclusion of the Code-tur project after making API and database (with MySQL) and learning how to use React and Bootstrap.",
+    "project.description2":
+      "The project I'm working on! A React Website for a physical education teacher. He wants to create a platform to share workout plans and nutrition tips with his students. Latter, I plan to create an ReactNative app for mobile!",
+    "project.description3":
+      "API project during the technical course at Senai. With ASP.NET core in Visual Studio IDE.",
+    "project.description4":
+      "The conclusion of the Code-tur project after making API and database (with MySQL) and learning how to use React and Bootstrap.",
     "project.Test": "Test Project",
     "project.Running": "Project Running",
     "contact.talk2me": "Talk to me!",
@@ -86,26 +96,30 @@ const translations = {
     "hero.title": "Bem vindo ao meu universo",
     "hero.subtitle": "Explore meus projetos como Desenvolvedor Full-Stack",
     "intro.subtitle": "Desenvolvedor & Jornalista",
-    "intro.description": "Formado em Jornalismo, técnico em análise e desenvolvimento de sistemas e engenheiro de software em produção. Possuo amplo conhecimento e experiência com escrita, comunicação, Java, C#, JavaScript (incluindo bibliotecas como anime.js, gsap.js), Bootstrap, Tailwind, React e ReactNative.",
+    "intro.description":
+      "Formado em Jornalismo, técnico em análise e desenvolvimento de sistemas e engenheiro de software em produção. Possuo amplo conhecimento e experiência com escrita, comunicação, Java, C#, JavaScript (incluindo bibliotecas como anime.js, gsap.js), Bootstrap, Tailwind, React e ReactNative.",
     "projects.title": "Meus Projetos",
-    "project.description1": "Produção em equipe no Senai TI com o objetivo de solucionar o problema de superlotação em um laboratório médico durante a pandemia.",
+    "project.description1":
+      "Produção em equipe no Senai TI com o objetivo de solucionar o problema de superlotação em um laboratório médico durante a pandemia.",
     "project.github": "Ver GitHub",
     "project.figma": "Ver Figma",
     "project.title": "LuRique Fit - Site",
-    "project.description2": "Este projeto é para um Personal Trainer de Corrida. Ele buscava maior proximidade com seus alunos e uma forma de compartilhar seu trabalho com mais pessoas.",
-    "project.description3": "Projeto de API durante o curso técnico do Senai. Com ASP.NET Core com Visual Studio.",
-    "project.description4": "A conclusão do projeto Code-tur após criação de API e banco de dados (com MySQL), aprendendo a utilizar React e implementando Bootstrap.",
+    "project.description2":
+      "O projeto em que estou trabalhando! Um site em React para um professor de educação física. Ele quer criar uma plataforma para compartilhar planos de treino e dicas de nutrição com seus alunos. Depois, pretendo criar um aplicativo ReactNative para dispositivos móveis!",
+    "project.description3":
+      "Projeto de API durante o curso técnico do Senai. Com ASP.NET Core com Visual Studio.",
+    "project.description4":
+      "A conclusão do projeto Code-tur após criação de API e banco de dados (com MySQL), aprendendo a utilizar React e implementando Bootstrap.",
     "project.Test": "Testar projeto",
     "project.Running": "Projeto Executando",
-    "contact.talk2me":"Fale comigo!",
+    "contact.talk2me": "Fale comigo!",
     "contact.name": "Nome Completo",
     "contact.message": "Escreva aqui...",
     "contact.sendMail": "Enviar e-mail",
     "contact.number": "Seu Número (Com DDD)",
     "contact.sendZap": "Enviar Mensagem!",
-  }
+  },
 };
-
 
 //Troca do inglês para o português com base nos nomes das classes e texto trocado
 let currentLang = "en";
@@ -142,39 +156,42 @@ document.addEventListener("DOMContentLoaded", () => {
   changeLanguage(currentLang);
 });
 
-
 //Script da seção de contato com botão alternando
-const btnEmail = document.getElementById('btn-email');
-const btnWhatsApp = document.getElementById('btn-whatsapp');
-const formEmail = document.getElementById('form-email');
-const formWhatsApp = document.getElementById('form-whatsapp');
+const btnEmail = document.getElementById("btn-email");
+const btnWhatsApp = document.getElementById("btn-whatsapp");
+const formEmail = document.getElementById("form-email");
+const formWhatsApp = document.getElementById("form-whatsapp");
 
-  btnEmail.addEventListener('click', () => {
-    formEmail.classList.remove('hidden');
-    formWhatsApp.classList.add('hidden');
-    btnEmail.classList.add('active');
-    btnWhatsApp.classList.remove('active');
-  });
+btnEmail.addEventListener("click", () => {
+  formEmail.classList.remove("hidden");
+  formWhatsApp.classList.add("hidden");
+  btnEmail.classList.add("active");
+  btnWhatsApp.classList.remove("active");
+});
 
-  btnWhatsApp.addEventListener('click', () => {
-    formWhatsApp.classList.remove('hidden');
-    formEmail.classList.add('hidden');
-    btnWhatsApp.classList.add('active');
-    btnEmail.classList.remove('active');
-  });
+btnWhatsApp.addEventListener("click", () => {
+  formWhatsApp.classList.remove("hidden");
+  formEmail.classList.add("hidden");
+  btnWhatsApp.classList.add("active");
+  btnEmail.classList.remove("active");
+});
 
-  formEmail.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const mensagem = document.getElementById('mensagem-email').value;
-    window.location.href = `mailto:pedrokamoda@gmail.com?subject=Contato de ${nome}&body=${encodeURIComponent(mensagem)}%0AEmail: ${email}`;
-  });
+formEmail.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const nome = document.getElementById("nome").value;
+  const email = document.getElementById("email").value;
+  const mensagem = document.getElementById("mensagem-email").value;
+  window.location.href = `mailto:pedrokamoda@gmail.com?subject=Contato de ${nome}&body=${encodeURIComponent(
+    mensagem
+  )}%0AEmail: ${email}`;
+});
 
-  formWhatsApp.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const telefone = document.getElementById('telefone').value.replace(/\D/g, '');
-    const mensagem = document.getElementById('mensagem-whatsapp').value;
-    const link = `https://wa.me/5511972191767?text=${encodeURIComponent(mensagem)}`;
-    window.open(link, '_blank');
-  });
+formWhatsApp.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const telefone = document.getElementById("telefone").value.replace(/\D/g, "");
+  const mensagem = document.getElementById("mensagem-whatsapp").value;
+  const link = `https://wa.me/5511972191767?text=${encodeURIComponent(
+    mensagem
+  )}`;
+  window.open(link, "_blank");
+});
